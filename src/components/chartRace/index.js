@@ -56,10 +56,17 @@ export default class ChartRace extends Component{
           position: 'absolute',
           right: '0',
           bottom: '0',
-          padding: '40px',
+          padding: '30px',
           fontSize: '25px',
           }}>
-          {dataShow}
+          <div style={{display: 'flex',flexDirection: 'column', alignItems: 'flex-end'}}>
+            <div>
+              {dataShow}
+            </div>
+            <div>
+              {`Texto Total: ${value}`}
+            </div>
+          </div>
         </div>
         </div>
 			</div>
