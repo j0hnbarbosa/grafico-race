@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ChartRace from '../chartRace';
+import { CircularProgress } from '@material-ui/core';
 
 export default class App extends Component{
 
@@ -23,7 +24,7 @@ export default class App extends Component{
 
   handleChange() {
     let { value, id } = this.state;
-    if(value > 10) {
+    if(value > 500) {
       clearInterval(id);
     }
 
@@ -41,18 +42,25 @@ export default class App extends Component{
   }
 
   render(){
+    let { value } = this.state;
+
     return(
+      
       <div>
-        <ChartRace
-          data={this.state.data}
-          backgroundColor='#CECECE'
-          width={960}
-          padding={5}
-          itemHeight={58}
-          gap={12}
-          titleStyle={{ font: 'normal 400 13px Arial', color: '#000' }}
-          valueStyle={{ font: 'normal 400 11px Arial', color: '#000' }}
-        />
+        {value === 0 && (<CircularProgress />)}
+        {value > 0 && (
+          <ChartRace
+            data={this.state.data}
+            backgroundColor='#CECECE'
+            width={960}
+            padding={5}
+            itemHeight={58}
+            gap={12}
+            titleStyle={{ font: 'normal 400 13px Arial', color: '#000' }}
+            valueStyle={{ font: 'normal 400 11px Arial', color: '#000' }}
+            value={this.state.value}
+          />
+        )}
       </div>
     );
   }

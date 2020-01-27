@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 import './style.css';
 import { Corgi, Corgi2 } from '../../images';
 
@@ -43,7 +44,9 @@ export default class ChartRace extends Component{
 	}
 
 	render(){
-    const {value} = this.state;
+    const { value } = this.props;
+    let dataShow = moment(`${2000 + value * 1}-01-01`).format("YYYY-MM-DD").substring(0, 4);
+    console.log('Here', value)
 		return(
       <div>
         <h1>TÍTULO DO GRÁFICO</h1>
@@ -55,8 +58,8 @@ export default class ChartRace extends Component{
           bottom: '0',
           padding: '40px',
           fontSize: '25px',
-                    }}>
-          2020
+          }}>
+          {dataShow}
         </div>
         </div>
 			</div>
