@@ -28,24 +28,37 @@ export default class ChartRace extends Component{
 		return(
 			<div key={index} className="raceItem" style={{ height: this.props.itemHeight, transform: 'translateY('+ translateY +'px) translateX('+ this.props.padding +'px)' }}>
         <div>
-          <Corgi />
+          <Corgi itemHeight={this.props.itemHeight} />
         </div>
-				<b style={{ backgroundColor: item.color, width: item.value / this.state.maxValue * ( this.props.width - 120 - ( 2 * this.props.padding ) ) }}></b>
+				<b style={{ backgroundColor: item.color, width: item.value / this.state.maxValue * ( this.props.width - 220 - ( 2 * this.props.padding ) ) }}></b>
 				<span>
 					<em style={this.props.titleStyle}>{ item.title }</em>
 					<i style={this.props.valueStyle}>{ item.value }</i>
 				</span>
         <div>
-          <Corgi2 />
+          <Corgi2 itemHeight={this.props.itemHeight} />
         </div>
 			</div>
 		);
 	}
 
 	render(){
+    const {value} = this.state;
 		return(
-			<div className="raceArea" style={{ backgroundColor: this.props.backgroundColor, paddingTop: this.props.padding, paddingBottom: this.props.padding, width: this.props.width, height: ( 2 * this.props.padding ) + ( this.state.temp.length * this.props.itemHeight ) + ( (this.state.temp.length - 1) * this.props.gap ) }}>
-				{ this.state.data.map((item, index) => this.draw(item, index)) }
+      <div>
+        <h1>TÍTULO DO GRÁFICO</h1>
+        <div className="raceArea" style={{ backgroundColor: this.props.backgroundColor, paddingTop: this.props.padding, paddingBottom: this.props.padding, width: this.props.width, height: ( 2 * this.props.padding ) + ( this.state.temp.length * this.props.itemHeight ) + ( (this.state.temp.length - 1) * this.props.gap ) }}>
+          { this.state.data.map((item, index) => this.draw(item, index)) }
+        <div style={{    
+          position: 'absolute',
+          right: '0',
+          bottom: '0',
+          padding: '40px',
+          fontSize: '25px',
+                    }}>
+          2020
+        </div>
+        </div>
 			</div>
 		);
 	}
