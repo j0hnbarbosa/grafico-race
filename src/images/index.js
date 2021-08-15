@@ -7,14 +7,19 @@ const styles = (value) => ({
   width: `${value}px`,
 });
 
-export const Corgi = (props) => (
+const Corgi = () => (
   <div>
-    <img src={CorgiImg} style={styles(props.itemHeight)} alt="corgi" />
+    <img src={CorgiImg} style={styles(25)} alt="corgi" />
   </div>
 );
 
-export const Corgi2 = (props) => (
+const Corgi2 = () => (
   <div>
-    <img src={CorgiImg2} style={styles(props.itemHeight)} alt="corgi" />
+    <img src={CorgiImg2} style={styles(25)} alt="corgi" />
   </div>
 );
+
+export {
+  Corgi,
+  Corgi2,
+};

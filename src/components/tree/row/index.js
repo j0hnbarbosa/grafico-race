@@ -4,7 +4,7 @@ import {
   RowContainer,
   ShadowRow,
   Container,
-} from './styles'
+} from './styles';
 
 const Row = (props) => {
   const {

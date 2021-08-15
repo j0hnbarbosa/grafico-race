@@ -7,15 +7,13 @@ import { arrayMoveImmutable } from 'array-move';
 
 const SortableItem = SortableElement(({ value }) => <li>{value}</li>);
 
-const SortableList = SortableContainer(({ items }) => {
-  return (
-    <ul>
-      {items.map((value, index) => (
-        <SortableItem key={`item-${value}`} index={index} value={value} />
-      ))}
-    </ul>
-  );
-});
+const SortableList = SortableContainer(({ items }) => (
+  <ul>
+    {items.map((value, index) => (
+      <SortableItem key={`item-${value}`} index={index} value={value} />
+    ))}
+  </ul>
+));
 
 const SortableComponent = () => {
   const initial = {
@@ -31,6 +29,6 @@ const SortableComponent = () => {
   };
 
   return <SortableList items={list.items} onSortEnd={onSortEnd} />;
-}
+};
 
 export default SortableComponent;

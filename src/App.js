@@ -1,11 +1,12 @@
 import React from 'react';
-import Main from './components/main';
+// import Main from './components/main';
+import Tree from './components/tree';
 
 function App() {
   return (
-    <div>
-      <Main />
-    </div>
+    <>
+      <Tree />
+    </>
   );
 }
 
