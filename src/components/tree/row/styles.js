@@ -5,6 +5,7 @@ const Container = styled.div`
 
 const RowContainer = styled.div`
   margin-left: ${({ marginLeft }) => `${marginLeft}px`};
+  margin-bottom: 6px;
   border: 1px solid #CECECE;
   cursor: pointer;
 `;

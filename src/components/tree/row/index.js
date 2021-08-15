@@ -16,7 +16,7 @@ const Row = (props) => {
   return (
     <Container>
 
-      <ShadowRow marginLeft={marginLeft} />
+      {/* <ShadowRow marginLeft={marginLeft} /> */}
 
       <RowContainer
         marginLeft={marginLeft}
@@ -24,9 +24,9 @@ const Row = (props) => {
         {label}
       </RowContainer>
 
-      {isLast && (
+      {/* {isLast && (
         <ShadowRow noMargin marginLeft={marginLeft} />
-      )}
+      )} */}
 
     </Container>
   );

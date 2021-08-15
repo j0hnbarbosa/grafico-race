@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Container = styled.div`
   margin-top: 50px;
@@ -8,5 +8,5 @@ const Container = styled.div`
 `;
 
 export {
-  Container
+  Container,
 };

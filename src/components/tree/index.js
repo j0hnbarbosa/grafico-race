@@ -60,6 +60,10 @@ const recursiveRow = (nodesChildren, level) => {
   return subBranch;
 }
 
+const preProcess = () => {
+
+};
+
 const Tree = (props) => {
   const treeData = treeGenerate();
   console.log(treeData);
